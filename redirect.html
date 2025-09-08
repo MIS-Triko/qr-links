@@ -2,29 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0;url=/" />
   <title>Redirecting...</title>
   <script>
-    // Mapping of product IDs to actual links
-    const productLinks = {
-      "product1": "https://example.com/products/123",
-      "product2": "https://example.com/products/456",
-      "product3": "https://example.com/products/789",
-      // Keep adding up to product200
+    // Define product links
+    const links = {
+      product1: "trikopharma.com",
+      product2: "amazon.com",
+      product3: "amazon.in",
+      // keep adding until product200
     };
 
-    // Get the "id" parameter from the URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get("id");
+    // Get ?id= from URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
 
-    // Redirect if found
-    if (productId && productLinks[productId]) {
-      window.location.href = productLinks[productId];
+    // If id exists in links, redirect
+    if (id && links[id]) {
+      window.location.href = links[id];
     } else {
+      // Default fallback (homepage or error page)
       document.write("<h2>Invalid or missing product link</h2>");
     }
   </script>
 </head>
 <body>
-  <p>Redirecting to product page...</p>
+  <p>Redirecting...</p>
 </body>
 </html>
