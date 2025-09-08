@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Redirecting...</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <script>
     // Define product links
     const links = {
-      product1: "https://trikopharma.com/",
-      product2: "https://amazon.com",
-      product3: "https://amazon.in",
-      // keep adding until product200
+      product1: "https://amazon.com",  // change anytime
+      product2: "https://amazon.in",
+      product3: "https://example.com"
     };
 
     // Get ?id= from URL
@@ -20,7 +22,6 @@
     if (id && links[id]) {
       window.location.href = links[id];
     } else {
-      // Default fallback (homepage or error page)
       document.write("<h2>Invalid or missing product link</h2>");
     }
   </script>
